@@ -52,7 +52,7 @@ jobs:
       #   with:
       #     registry: ${{ secrets.REGISTRY }}
       #     username: ${{ secrets.REGISTRY_USERNAME }}
-      #     password: ${{ secrets.REGISTRY_PASSWORD }}
+      #     password: ${{ secrets.REGISTRY_PASSWORD }} forceupdate
 
       - name: Build and Push
         uses: docker/build-push-action@v2
