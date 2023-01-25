@@ -21,6 +21,7 @@ jobs:
           - {type: "java", image: "17-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "18-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "19-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "17-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "erlang", image: "22", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
           - {type: "erlang", image: "23", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
           - {type: "erlang", image: "24", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
