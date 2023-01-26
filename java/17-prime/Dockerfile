@@ -22,6 +22,8 @@
 
 FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:17
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 LABEL       author="rafi67000" maintainer="kontakt@rafi67000.xyz"
 
 LABEL       org.opencontainers.image.source="https://github.com/rafi67000/images"
