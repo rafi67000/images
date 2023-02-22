@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH jenkins/jenkins:lts-jdk17
+FROM        --platform=$TARGETOS/$TARGETARCH jenkins/jenkins:lts-jdk11
 
 ARG DEBIAN_FRONTEND=noninteractive
 
