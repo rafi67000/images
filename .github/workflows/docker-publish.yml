@@ -15,6 +15,7 @@ jobs:
 
       matrix:
         image:
+          - {type: "jenkins", image: "jenkins", PREFIX: "jenkins", SUFFIX: "", context: "./other", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "8-zulu"    , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "11-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "16-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
