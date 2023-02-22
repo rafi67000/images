@@ -12,6 +12,3 @@ RUN mkdir /home/container/jenkins
 USER        container
 ENV         USER=container HOME=/home/container JENKINS_HOME=/home/container/jenkins
 WORKDIR     /home/container
-
-COPY        ./../entrypoint.sh /entrypoint.sh
-CMD         [ "/bin/bash", "/entrypoint.sh" ]
