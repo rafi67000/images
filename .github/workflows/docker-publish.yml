@@ -15,14 +15,20 @@ jobs:
 
       matrix:
         image:
-          - {type: "other", image: "jenkins", PREFIX: "jenkins", SUFFIX: "", context: "./other", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "other", image: "jenkins", PREFIX: "jenkins", SUFFIX: "", context: "./other", platforms: "linux/amd64,linux/arm64"}
+          # Azul Zulu OpenJDK
           - {type: "java", image: "8-zulu"    , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "11-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          - {type: "java", image: "16-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "java", image: "16-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "17-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          - {type: "java", image: "18-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "java", image: "18-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "19-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          #  Azul Prime (Zing)
+          - {type: "java", image: "8-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "11-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "17-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "19-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # Erlang
           - {type: "erlang", image: "22", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
           - {type: "erlang", image: "23", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
           - {type: "erlang", image: "24", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
@@ -38,7 +44,6 @@ jobs:
       - name: Install buildx
         uses: docker/setup-buildx-action@v2
         with:
-          version: v0.9.1
           buildkitd-flags: --debug
 
       - name: Login to GitHub Container Registry
@@ -56,7 +61,7 @@ jobs:
       #     password: ${{ secrets.REGISTRY_PASSWORD }} forceupdate
 
       - name: Build and Push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ./${{ matrix.image.context }}
           file: ./${{ matrix.image.type }}/${{ matrix.image.image }}/Dockerfile
