@@ -1,4 +1,4 @@
-name: Docker
+name: Docker build and push
 
 on:
   push:
@@ -30,13 +30,13 @@ jobs:
           - {type: "java", image: "17-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "19-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           # Erlang
-          - {type: "erlang", image: "22", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
-          - {type: "erlang", image: "23", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
-          - {type: "erlang", image: "24", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "erlang", image: "22", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "erlang", image: "23", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "erlang", image: "24", PREFIX: "erlang", SUFFIX: "", context: "./erlang", platforms: "linux/amd64,linux/arm64"}
 
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -53,13 +53,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
-
-      # - name: Login to Private Registry
-      #   uses: docker/login-action@v1
-      #   with:
-      #     registry: ${{ secrets.REGISTRY }}
-      #     username: ${{ secrets.REGISTRY_USERNAME }}
-      #     password: ${{ secrets.REGISTRY_PASSWORD }} forceupdate
 
       - name: Build and Push
         uses: docker/build-push-action@v4
