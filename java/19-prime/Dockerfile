@@ -20,7 +20,7 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:latest
+FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:19
 
 ARG DEBIAN_FRONTEND=noninteractive
 
