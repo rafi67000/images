@@ -9,22 +9,27 @@ jobs:
   push:
     name: Push
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip]')"
 
     strategy:
       fail-fast: false
 
       matrix:
         image:
+          # Jenkins
           # - {type: "other", image: "jenkins", PREFIX: "jenkins", SUFFIX: "", context: "./other", platforms: "linux/amd64,linux/arm64"}
+
           # Azul Zulu OpenJDK
-          - {type: "java", image: "8-zulu"    , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          - {type: "java", image: "11-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          - {type: "java", image: "17-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          - {type: "java", image: "20-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "8-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "11-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "17-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {type: "java", image: "20-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+
           # Deprecated Azul Zulu OpenJDK
-          # - {type: "java", image: "16-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          # - {type: "java", image: "18-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          # - {type: "java", image: "19-zulu"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "java", image: "16-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "java", image: "18-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          # - {type: "java", image: "19-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+
           #  Azul Prime (Zing)
           - {type: "java", image: "8-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
           - {type: "java", image: "11-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
