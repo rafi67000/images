@@ -20,7 +20,7 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:11.0.18-10-23.03.0.0-arm64
+FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:11
 
 ARG DEBIAN_FRONTEND=noninteractive
 
