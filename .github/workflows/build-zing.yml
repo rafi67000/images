@@ -22,9 +22,6 @@ jobs:
           - {name: "11-prime", image: "11", platforms: "linux/amd64,linux/arm64"}
           - {name: "17-prime", image: "17", platforms: "linux/amd64,linux/arm64"}
 
-          # Deprecated Azul Prime (Zing)
-          # - {type: "java", image: "19-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64"}
-
     steps:
       - name: Code Checkout
         uses: actions/checkout@v3

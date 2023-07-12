@@ -20,7 +20,7 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH azul/prime:17
+FROM        --platform=$TARGETOS/$TARGETARCH azul/prime-debian:17
 
 ARG DEBIAN_FRONTEND=noninteractive
 

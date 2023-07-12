@@ -18,19 +18,15 @@ jobs:
         image:
 
           # Azul Zulu OpenJDK
-          - {name: "8-zulu", image: "8", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {name: "8-zulu", image: "8-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "11-zulu", image: "11", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {name: "11-zulu", image: "11-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "17-zulu", image: "17", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {name: "17-zulu", image: "17-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "20-zulu", image: "20", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {name: "20-zulu", image: "20-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "8-zulu", image: "8", platforms: "linux/amd64,linux/arm64"}
+          - {name: "11-zulu", image: "11", platforms: "linux/amd64,linux/arm64"}
+          - {name: "17-zulu", image: "17", platforms: "linux/amd64,linux/arm64"}
+          - {name: "20-zulu", image: "20", platforms: "linux/amd64,linux/arm64"}
 
-          # Deprecated Azul Zulu OpenJDK
-          # - {type: "java", image: "16-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          # - {type: "java", image: "18-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
-          # - {type: "java", image: "19-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
+          - {name: "8-zulu-headless", image: "8-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "11-zulu-headless", image: "11-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "17-zulu-headless", image: "17-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "20-zulu-headless", image: "20-headless", platforms: "linux/amd64,linux/arm64"}          
 
     steps:
       - name: Code Checkout
@@ -60,4 +56,4 @@ jobs:
           platforms: ${{ matrix.image.platforms }}
           push: true
           tags: |
-            ghcr.io/rafi67000/pterodactyl-images:java${{ matrix.image.name }}${{ matrix.image.SUFFIX }}
+            ghcr.io/rafi67000/pterodactyl-images:java${{ matrix.image.name }}

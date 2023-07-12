@@ -1,49 +1,19 @@
-#
-# Copyright (c) 2021 Matthew Penner
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-#
+FROM        --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk-debian:11-jre-latest
 
-FROM		--platform=$TARGETOS/$TARGETARCH registry.access.redhat.com/ubi8/ubi-minimal:latest
+ARG DEBIAN_FRONTEND=noninteractive
 
-LABEL		author="Matthew Penner" maintainer="matthew@pterodactyl.io"
+LABEL       author="rafi67000" maintainer="kontakt@rafi67000.xyz"
 
-LABEL		org.opencontainers.image.source="https://github.com/matthewpi/images"
-LABEL		org.opencontainers.image.licenses=MIT
+LABEL       org.opencontainers.image.source="https://github.com/rafi67000/images"
+LABEL       org.opencontainers.image.licenses=MIT
 
-RUN			microdnf install fontconfig glibc-langpack-en iproute openssl shadow-utils sqlite tar \
-				&& microdnf update \
-				&& adduser --home-dir /home/container container \
-				&& rpm --install https://cdn.azul.com/zulu/bin/zulu-repo-1.0.0-1.noarch.rpm \
-				&& microdnf install zulu11-jre \
-				&& microdnf clean all \
-				&& sed -i 's/^LANG=.*/LANG="en_US.utf8"/' /etc/locale.conf
+RUN 		apt-get update -y \
+ 			&& apt-get install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+ 			&& useradd -d /home/container -m container
 
-ENV			LANG=en_US.UTF-8
-ENV			LANGUAGE=en_US:en
-ENV			LC_ALL=en_US.UTF-8
+USER        container
+ENV         USER=container HOME=/home/container
+WORKDIR     /home/container
 
-ENV			JAVA_HOME=/usr/lib/jvm/zulu11
-
-USER		container
-ENV			USER=container HOME=/home/container
-WORKDIR		/home/container
-
-COPY		./entrypoint.sh /entrypoint.sh
-CMD			[ "/bin/bash", "/entrypoint.sh" ]
+COPY        ./../entrypoint.sh /entrypoint.sh
+CMD         [ "/bin/bash", "/entrypoint.sh" ]
