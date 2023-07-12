@@ -31,7 +31,7 @@ RUN			microdnf install fontconfig glibc-langpack-en iproute openssl shadow-utils
 				&& microdnf update \
 				&& adduser --home-dir /home/container container \
 				&& rpm --install https://cdn.azul.com/zulu/bin/zulu-repo-1.0.0-1.noarch.rpm \
-				&& microdnf install zulu11 \
+				&& microdnf install zulu11-jre \
 				&& microdnf clean all \
 				&& sed -i 's/^LANG=.*/LANG="en_US.utf8"/' /etc/locale.conf
 
