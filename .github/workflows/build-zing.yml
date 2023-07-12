@@ -18,9 +18,9 @@ jobs:
         image:
 
           #  Azul Prime (Zing)
-          - {image: "8-prime", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {image: "11-prime", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {image: "17-prime", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "8-prime", image: "8", platforms: "linux/amd64,linux/arm64"}
+          - {name: "11-prime", image: "11", platforms: "linux/amd64,linux/arm64"}
+          - {name: "17-prime", image: "17", platforms: "linux/amd64,linux/arm64"}
 
           # Deprecated Azul Prime (Zing)
           # - {type: "java", image: "19-prime"   , PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64"}
@@ -53,4 +53,4 @@ jobs:
           platforms: ${{ matrix.image.platforms }}
           push: true
           tags: |
-            ghcr.io/rafi67000/pterodactyl-images:${{ matrix.image.PREFIX }}${{ matrix.image.image }}${{ matrix.image.SUFFIX }}
+            ghcr.io/rafi67000/pterodactyl-images:java${{ matrix.image.name }}

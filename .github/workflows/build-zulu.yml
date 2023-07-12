@@ -18,10 +18,14 @@ jobs:
         image:
 
           # Azul Zulu OpenJDK
-          - {image: "8-zulu", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {image: "11-zulu", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {image: "17-zulu", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
-          - {image: "20-zulu", PREFIX: "java", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "8-zulu", image: "8", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "8-zulu", image: "8-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "11-zulu", image: "11", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "11-zulu", image: "11-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "17-zulu", image: "17", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "17-zulu", image: "17-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
+          - {name: "20-zulu", image: "20", SUFFIX: "", platforms: "linux/amd64,linux/arm64"}
+          - {name: "20-zulu", image: "20-headless", SUFFIX: "-headless", platforms: "linux/amd64,linux/arm64"}
 
           # Deprecated Azul Zulu OpenJDK
           # - {type: "java", image: "16-zulu", PREFIX: "java", SUFFIX: "", context: "./java", platforms: "linux/amd64,linux/arm64"}
@@ -56,4 +60,4 @@ jobs:
           platforms: ${{ matrix.image.platforms }}
           push: true
           tags: |
-            ghcr.io/rafi67000/pterodactyl-images:${{ matrix.image.PREFIX }}${{ matrix.image.image }}${{ matrix.image.SUFFIX }}
+            ghcr.io/rafi67000/pterodactyl-images:java${{ matrix.image.name }}${{ matrix.image.SUFFIX }}
