@@ -23,11 +23,6 @@ jobs:
           - {name: "17-zulu", image: "17", platforms: "linux/amd64,linux/arm64"}
           - {name: "20-zulu", image: "20", platforms: "linux/amd64,linux/arm64"}
 
-          - {name: "8-zulu-headless", image: "8-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "11-zulu-headless", image: "11-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "17-zulu-headless", image: "17-headless", platforms: "linux/amd64,linux/arm64"}
-          - {name: "20-zulu-headless", image: "20-headless", platforms: "linux/amd64,linux/arm64"}          
-
     steps:
       - name: Code Checkout
         uses: actions/checkout@v3
