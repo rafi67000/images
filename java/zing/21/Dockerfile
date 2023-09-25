@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH azul/prime-debian:17
+FROM        --platform=$TARGETOS/$TARGETARCH azul/prime-debian:21
 
 ARG DEBIAN_FRONTEND=noninteractive
 

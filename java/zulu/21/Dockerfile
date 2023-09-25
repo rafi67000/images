@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH azul/prime-debian:17
+FROM        --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk-debian:21-jre-headless-latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 
