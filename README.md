@@ -8,7 +8,7 @@ Images are hosted on `ghcr.io`.
 To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 
 ## Available Images
-### Azul Zulu 
+### Azul Zulu
 
 #### Zulu 8 LTS
 
@@ -73,7 +73,7 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 - `linux/amd64`
 - `linux/arm64`
 
-#### Zing 21 LTS
+#### Zing 21 LTS (Not yet)
 
 - [`java21-prime`](https://github.com/rafi67000/images/tree/master/java/zing/21)
 - Tags
