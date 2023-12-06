@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - java/zing/**
+      - .github/workflows/build-zing.yml
 jobs:
   push:
     name: Push
