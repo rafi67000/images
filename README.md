@@ -73,7 +73,7 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 - `linux/amd64`
 - `linux/arm64`
 
-#### Zing 21 LTS (Not yet)
+#### Zing 21 LTS
 
 - [`java21-prime`](https://github.com/rafi67000/images/tree/master/java/zing/21)
 - Tags
