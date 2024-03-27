@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk-debian:21-jdk-crac-latest
+FROM        --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk:21-jdk-crac-latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 

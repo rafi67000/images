@@ -22,9 +22,12 @@ jobs:
           - {name: "11-zulu", image: "11", platforms: "linux/amd64,linux/arm64"}
           - {name: "17-zulu", image: "17", platforms: "linux/amd64,linux/arm64"}
           - {name: "21-zulu", image: "21", platforms: "linux/amd64,linux/arm64"}
+          - {name: "22-zulu", image: "22", platforms: "linux/amd64,linux/arm64"}
+
           # Azul Zulu CRaC
           - {name: "17-zulu-crac", image: "17-CRaC", platforms: "linux/amd64,linux/arm64"}
           - {name: "21-zulu-crac", image: "21-CRaC", platforms: "linux/amd64,linux/arm64"}
+          - {name: "22-zulu-crac", image: "22-CRaC", platforms: "linux/amd64,linux/arm64"}
 
 
     steps:
@@ -55,4 +58,4 @@ jobs:
           platforms: ${{ matrix.image.platforms }}
           push: true
           tags: |
-            ghcr.io/rafi67000/pterodactyl-images:zulu${{ matrix.image.image }}
+            ghcr.io/rafi67000/images:zulu${{ matrix.image.image }}
