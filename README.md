@@ -83,6 +83,24 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 - Supported Architectures
 - `linux/amd64`
 - `linux/arm64`
+- 
+#### Zulu 23 STS
+
+- [`zulu23`](https://github.com/rafi67000/images/tree/master/java/zulu/22)
+- Tags
+- `ghcr.io/rafi67000/images:zulu23`
+- Supported Architectures
+- `linux/amd64`
+- `linux/arm64`
+
+#### Zulu 23 STS (CRaC)
+
+- [`zulu23-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/22-CRaC)
+- Tags
+- `ghcr.io/rafi67000/images:zulu23-CRaC`
+- Supported Architectures
+- `linux/amd64`
+- `linux/arm64`
 
 
 ### Azul Zing
