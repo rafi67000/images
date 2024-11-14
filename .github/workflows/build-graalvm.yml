@@ -1,11 +1,10 @@
-name: build Azul Zing
+name: build Oracle GraalVM
 on:
   push:
     branches:
       - master
     paths:
-      - java/zing/**
-      - .github/workflows/build-zing.yml
+      - java/graalvm/**
 jobs:
   push:
     name: Push
@@ -17,12 +16,9 @@ jobs:
 
       matrix:
         image:
+          - {name: "21-graalvm", image: "21", platforms: "linux/amd64,linux/arm64"}
+          - {name: "23-graalvm", image: "23", platforms: "linux/amd64,linux/arm64"}
 
-          #  Azul Prime (Zing)
-          - {name: "8-prime", image: "8", platforms: "linux/amd64,linux/arm64"}
-          - {name: "11-prime", image: "11", platforms: "linux/amd64,linux/arm64"}
-          - {name: "17-prime", image: "17", platforms: "linux/amd64,linux/arm64"}
-          - {name: "21-prime", image: "21", platforms: "linux/amd64,linux/arm64"}
 
     steps:
       - name: Code Checkout
@@ -47,9 +43,9 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
-          context: ./java/zing
-          file: ./java/zing/${{ matrix.image.image }}/Dockerfile
+          context: ./java/graalvm
+          file: ./java/graalvm/${{ matrix.image.image }}/Dockerfile
           platforms: ${{ matrix.image.platforms }}
           push: true
           tags: |
-            ghcr.io/rafi67000/images:zing${{ matrix.image.image }}
+            ghcr.io/rafi67000/images:graalvm${{ matrix.image.image }}
