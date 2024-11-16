@@ -86,7 +86,7 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 - 
 #### Zulu 23 STS
 
-- [`zulu23`](https://github.com/rafi67000/images/tree/master/java/zulu/22)
+- [`zulu23`](https://github.com/rafi67000/images/tree/master/java/zulu/23)
 - Tags
 - `ghcr.io/rafi67000/images:zulu23`
 - Supported Architectures
@@ -95,7 +95,7 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 
 #### Zulu 23 STS (CRaC)
 
-- [`zulu23-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/22-CRaC)
+- [`zulu23-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/23-CRaC)
 - Tags
 - `ghcr.io/rafi67000/images:zulu23-CRaC`
 - Supported Architectures
@@ -107,36 +107,62 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 
 #### Zing 8 LTS
 
-- [`java8-prime`](https://github.com/rafi67000/images/tree/master/java/zing/8)
+- [`zing8`](https://github.com/rafi67000/images/tree/master/java/zing/8)
 - Tags
-- `ghcr.io/rafi67000/images:java8-prime`
+- `ghcr.io/rafi67000/images:zing8`
 - Supported Architectures
 - `linux/amd64`
 - `linux/arm64`
 
 #### Zing 11 LTS
 
-- [`java11-prime`](https://github.com/rafi67000/images/tree/master/java/zing/11)
+- [`zing11`](https://github.com/rafi67000/images/tree/master/java/zing/11)
 - Tags
-- `ghcr.io/rafi67000/images:java11-prime`
+- `ghcr.io/rafi67000/images:zing11`
 - Supported Architectures
 - `linux/amd64`
 - `linux/arm64`
 
 #### Zing 17 LTS
 
-- [`java17-prime`](https://github.com/rafi67000/images/tree/master/java/zing/17)
+- [`zing17`](https://github.com/rafi67000/images/tree/master/java/zing/17)
 - Tags
-- `ghcr.io/rafi67000/images:java17-prime`
+- `ghcr.io/rafi67000/images:zing17`
 - Supported Architectures
 - `linux/amd64`
 - `linux/arm64`
 
 #### Zing 21 LTS
 
-- [`java21-prime`](https://github.com/rafi67000/images/tree/master/java/zing/21)
+- [`zing21`](https://github.com/rafi67000/images/tree/master/java/zing/21)
 - Tags
-- `ghcr.io/rafi67000/images:java21-prime`
+- `ghcr.io/rafi67000/images:zing21`
+- Supported Architectures
+- `linux/amd64`
+- `linux/arm64`
+
+### Oracle GraalVM
+
+#### GraalVM 24 EA
+- [`graalvm24`](https://github.com/rafi67000/images/tree/master/java/graalvm/24)
+- Tags
+- `ghcr.io/rafi67000/images:graalvm24`
+- Supported Architectures
+- `linux/amd64`
+- `linux/arm64`
+
+#### GraalVM 23 STS
+- [`graalvm23`](https://github.com/rafi67000/images/tree/master/java/graalvm/23)
+- Tags
+- `ghcr.io/rafi67000/images:graalvm23`
+- Supported Architectures
+- `linux/amd64`
+- `linux/arm64`
+
+#### GraalVM 21 LTS
+- [`graalvm21`](https://github.com/rafi67000/images/tree/master/java/graalvm/21)
+- Tags
+- `ghcr.io/rafi67000/images:graalvm21`
 - Supported Architectures
 - `linux/amd64`
 - `linux/arm64`
