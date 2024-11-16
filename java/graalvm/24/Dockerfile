@@ -20,7 +20,11 @@ RUN apt-get update -y \
          "linux/amd64")  ARCH=x64  ;; \
          "linux/arm64")  ARCH=aarch64  ;; \
     esac \
-  && GRAAL_VERSION=$(curl -s -H "Accept: application/vnd.github+json" https://api.github.com/repos/graalvm/graalvm-ea-builds/releases/latest | jq -r .tag_name) \
+  && GRAAL_VERSION=$(curl -L \
+                       -H "Accept: application/vnd.github+json" \
+                       -H "Authorization: Bearer <YOUR-TOKEN>" \
+                       -H "X-GitHub-Api-Version: 2022-11-28" \
+                       https://api.github.com/repos/graalvm/graalvm-ea-builds/releases/latest | jq -r .tag_name) \
   && curl --retry 3 -Lfso /tmp/graalvm.tar.gz https://github.com/graalvm/oracle-graalvm-ea-builds/releases/download/${GRAAL_VERSION}/graalvm-jdk-${GRAAL_VERSION}_linux-${ARCH}_bin.tar.gz \
   && mkdir -p /opt/java/graalvm \
   && cd /opt/java/graalvm \
