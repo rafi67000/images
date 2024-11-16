@@ -25,10 +25,7 @@ RUN case "${TARGETPLATFORM}" in \
   && export ARCH
 
 # Fetch and install GraalVM
-RUN GRAAL_VERSION=$(curl -L \
-                       -H "Accept: application/vnd.github+json" \
-                       -H "X-GitHub-Api-Version: 2022-11-28" \
-                       https://api.github.com/repos/graalvm/graalvm-ea-builds/releases/latest | jq -r .tag_name) \
+RUN GRAAL_VERSION=$(curl -s https://api.github.com/repos/graalvm/oracle-graalvm-ea-builds/releases | jq -r .tag_name) \
   && curl --retry 3 -Lfso /tmp/graalvm.tar.gz \
       https://github.com/graalvm/oracle-graalvm-ea-builds/releases/download/${GRAAL_VERSION}/graalvm-jdk-${GRAAL_VERSION}_linux-${ARCH}_bin.tar.gz \
   && mkdir -p /opt/java/graalvm \
