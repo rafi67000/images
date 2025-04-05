@@ -143,7 +143,7 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 
 ### Oracle GraalVM
 
-#### GraalVM 24 EA
+#### GraalVM 24 STS
 - [`graalvm24`](https://github.com/rafi67000/images/tree/master/java/graalvm/24)
 - Tags
 - `ghcr.io/rafi67000/images:graalvm24`
