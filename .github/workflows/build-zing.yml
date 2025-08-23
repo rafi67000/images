@@ -23,7 +23,6 @@ jobs:
           - {name: "11-prime", image: "11", platforms: "linux/amd64,linux/arm64"}
           - {name: "17-prime", image: "17", platforms: "linux/amd64,linux/arm64"}
           - {name: "21-prime", image: "21", platforms: "linux/amd64,linux/arm64"}
-          - {name: "23-prime", image: "23", platforms: "linux/amd64,linux/arm64"}
 
     steps:
       - name: Code Checkout

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Copyright (c) 2021 Matthew Penner
+# Copyright (c) 2023 Matthew Penner
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 # SOFTWARE.
 #
 
-# Default the TZ environment variable to UTC.
+# Default the TZ environment variable to UTC
 TZ=${TZ:-UTC}
 export TZ
 
@@ -30,17 +30,21 @@ export TZ
 INTERNAL_IP=$(ip route get 1 | awk '{print $NF;exit}')
 export INTERNAL_IP
 
+# Default the IMAGE_PROMPT environment variable to something nice
+IMAGE_PROMPT=${IMAGE_PROMPT:-$'\033[1m\033[33mcontainer@pterodactyl~ \033[0m'}
+export IMAGE_PROMPT
+
 # Switch to the container's working directory
 cd /home/container || exit 1
 
 # Print Java version
-printf "\033[1m\033[33mcontainer@pterodactyl~ \033[0mjava -version\n"
+printf "%sjava -version\n" "$IMAGE_PROMPT"
 java -version
 
 # Replace variables in the startup command
 PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat -)")
-printf "\033[1m\033[33mcontainer@pterodactyl~ \033[0m%s\n" "$PARSED"
+printf "%s%s\n" "$IMAGE_PROMPT" "$PARSED"
 
-# Run the startup command 
+# Run the startup command
 # shellcheck disable=SC2086
 exec env ${PARSED}

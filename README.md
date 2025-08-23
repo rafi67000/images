@@ -50,11 +50,11 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 #### Zulu 21 LTS
 
 - [`zulu21`](https://github.com/rafi67000/images/tree/master/java/zulu/21)
-- Tags
-- `ghcr.io/rafi67000/images:zulu21`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
+  - Tags
+    - `ghcr.io/rafi67000/images:zulu21`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
 
 
 #### Zulu 21 LTS (CRaC)
@@ -66,41 +66,23 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
     - `linux/amd64`
     - `linux/arm64`
 
-#### Zulu 22 STS
+#### Zulu 24 STS
 
-- [`zulu22`](https://github.com/rafi67000/images/tree/master/java/zulu/22)
-- Tags
-- `ghcr.io/rafi67000/images:zulu22`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
+- [`zulu24`](https://github.com/rafi67000/images/tree/master/java/zulu/24)
+  - Tags
+    - `ghcr.io/rafi67000/images:zulu24`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
 
-#### Zulu 22 STS (CRaC)
+#### Zulu 24 STS (CRaC)
 
-- [`zulu22-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/22-CRaC)
-- Tags
-- `ghcr.io/rafi67000/images:zulu22-CRaC`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
-- 
-#### Zulu 23 STS
-
-- [`zulu23`](https://github.com/rafi67000/images/tree/master/java/zulu/23)
-- Tags
-- `ghcr.io/rafi67000/images:zulu23`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
-
-#### Zulu 23 STS (CRaC)
-
-- [`zulu23-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/23-CRaC)
-- Tags
-- `ghcr.io/rafi67000/images:zulu23-CRaC`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
+- [`zulu24-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/24-CRaC)
+  - Tags
+    - `ghcr.io/rafi67000/images:zulu24-CRaC`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
 
 
 ### Azul Zing
@@ -141,37 +123,20 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 - `linux/amd64`
 - `linux/arm64`
 
-#### Zing 23 MTS
-
-- [`zing23`](https://github.com/rafi67000/images/tree/master/java/zing/23)
-- Tags
-- `ghcr.io/rafi67000/images:zing23`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
-
 ### Oracle GraalVM
 
 #### GraalVM 24 STS
 - [`graalvm24`](https://github.com/rafi67000/images/tree/master/java/graalvm/24)
-- Tags
-- `ghcr.io/rafi67000/images:graalvm24`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
-
-#### GraalVM 23 STS
-- [`graalvm23`](https://github.com/rafi67000/images/tree/master/java/graalvm/23)
-- Tags
-- `ghcr.io/rafi67000/images:graalvm23`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
+  - Tags
+    - `ghcr.io/rafi67000/images:graalvm24`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
 
 #### GraalVM 21 LTS
 - [`graalvm21`](https://github.com/rafi67000/images/tree/master/java/graalvm/21)
-- Tags
-- `ghcr.io/rafi67000/images:graalvm21`
-- Supported Architectures
-- `linux/amd64`
-- `linux/arm64`
+  - Tags
+    - `ghcr.io/rafi67000/images:graalvm21`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
