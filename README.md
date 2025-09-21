@@ -66,20 +66,20 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
     - `linux/amd64`
     - `linux/arm64`
 
-#### Zulu 24 STS
+#### Zulu 25 LTS
 
-- [`zulu24`](https://github.com/rafi67000/images/tree/master/java/zulu/24)
+- [`zulu25`](https://github.com/rafi67000/images/tree/master/java/zulu/25)
   - Tags
-    - `ghcr.io/rafi67000/images:zulu24`
+    - `ghcr.io/rafi67000/images:zulu25`
   - Supported Architectures
     - `linux/amd64`
     - `linux/arm64`
 
-#### Zulu 24 STS (CRaC)
+#### Zulu 25 LTS (CRaC)
 
-- [`zulu24-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/24-CRaC)
+- [`zulu25-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/25-CRaC)
   - Tags
-    - `ghcr.io/rafi67000/images:zulu24-CRaC`
+    - `ghcr.io/rafi67000/images:zulu25-CRaC`
   - Supported Architectures
     - `linux/amd64`
     - `linux/arm64`
@@ -125,18 +125,18 @@ To use any of these images, use `ghcr.io/rafi67000/images:<IMAGE>`.
 
 ### Oracle GraalVM
 
-#### GraalVM 24 STS
-- [`graalvm24`](https://github.com/rafi67000/images/tree/master/java/graalvm/24)
-  - Tags
-    - `ghcr.io/rafi67000/images:graalvm24`
-  - Supported Architectures
-    - `linux/amd64`
-    - `linux/arm64`
-
 #### GraalVM 21 LTS
 - [`graalvm21`](https://github.com/rafi67000/images/tree/master/java/graalvm/21)
   - Tags
     - `ghcr.io/rafi67000/images:graalvm21`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
+
+#### GraalVM 25 LTS
+- [`graalvm25`](https://github.com/rafi67000/images/tree/master/java/graalvm/25)
+  - Tags
+    - `ghcr.io/rafi67000/images:graalvm25`
   - Supported Architectures
     - `linux/amd64`
     - `linux/arm64`

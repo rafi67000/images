@@ -41,6 +41,23 @@ Those images were deprecated and are no longer built
 - `linux/amd64`
 - `linux/arm64`
 
+#### Zulu 24 STS
+
+- [`zulu24`](https://github.com/rafi67000/images/tree/master/java/zulu/24)
+  - Tags
+    - `ghcr.io/rafi67000/images:zulu24`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
+
+#### Zulu 24 STS (CRaC)
+
+- [`zulu24-CRaC`](https://github.com/rafi67000/images/tree/master/java/zulu/24-CRaC)
+  - Tags
+    - `ghcr.io/rafi67000/images:zulu24-CRaC`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
 
 ### Azul Zing
 
@@ -59,6 +76,14 @@ Those images were deprecated and are no longer built
 - [`graalvm23`](https://github.com/rafi67000/images/tree/master/java/graalvm/23)
   - Tags
     - `ghcr.io/rafi67000/images:graalvm23`
+  - Supported Architectures
+    - `linux/amd64`
+    - `linux/arm64`
+
+#### GraalVM 24 STS
+- [`graalvm24`](https://github.com/rafi67000/images/tree/master/java/graalvm/24)
+  - Tags
+    - `ghcr.io/rafi67000/images:graalvm24`
   - Supported Architectures
     - `linux/amd64`
     - `linux/arm64`
