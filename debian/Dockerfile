@@ -9,13 +9,8 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 RUN 		apt-get update -y \
  			&& apt-get install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
-      		&& apt-get install -y sudo \
- 			&& useradd -d /home/container -m container \
-      		&& usermod -aG sudo container
+      		&& apt-get install -y sudo
 
-USER        container
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
-
+USER        root
 COPY        ./../entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
